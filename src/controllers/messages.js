@@ -18,6 +18,8 @@ const render = views(__dirname + '/../views', {
 
 const request = require('request-promise');
 
+let emptyCart = true;
+
 module.exports.home = function *home(ctx) {
   this.body = yield render('list', {'messages': messages});
 };
@@ -42,12 +44,20 @@ module.exports.create = function *create() {
 };
 
 function asyncOperation() {
-  return request({
-    uri: 'http://localhost:9090/api/dev/article',
-    headers: {
-      authorization: process.env.ACCESS_TOKEN
-    }
-  });
+
+  let weight = emptyCart? 0 : 66.6;
+
+  emptyCart = !emptyCart;
+
+  return {weight: weight};
+
+  // return request({
+  //   uri: 'http://localhost:9090/api/dev/article',
+  //   headers: {
+  //     authorization: process.env.ACCESS_TOKEN
+  //   }
+  // });
+
 }
 
 const returnsPromise = () =>
