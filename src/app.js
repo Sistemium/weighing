@@ -14,6 +14,8 @@ const port = process.env.PORT || 3000;
 // Logger
 app.use(logger());
 
+app.use(cors({origin: 'http://localhost:3000'}));
+
 route
   .get('/', messages.home)
   .get('/messages', messages.list)
