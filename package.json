@@ -11,6 +11,7 @@
     "co-views": "^2.1.0",
     "koa": "^1.2.0",
     "koa-compress": "^1.0.6",
+    "koa-cors": "0.0.16",
     "koa-logger": "^1.2.0",
     "koa-router": "^5.4.1",
     "koa-static": "^2.0.0",
