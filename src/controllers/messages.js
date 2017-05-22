@@ -45,7 +45,7 @@ module.exports.create = function *create() {
 
 function asyncOperation() {
 
-  let weight = emptyCart? 0 : 66.6;
+  let weight = emptyCart? 0 : Math.floor((666 * Math.random()) * 10) / 10;
 
   emptyCart = !emptyCart;
 
